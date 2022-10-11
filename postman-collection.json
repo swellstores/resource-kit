@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "e1960dd4-ac77-40e3-acb7-999b0fc95909",
+		"_postman_id": "b50aed11-68ee-4899-952d-b0aaed4fcd59",
 		"name": "Swell Backend API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3481621"
 	},
 	"item": [
 		{
@@ -14,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/products?where[date_created][$gte]=2022-01-01T00:00:00Z&where[stock_level][$gt]=10&where[active]=true&sort=name+asc&limit=10&page=2&search=t+shirt&expand=items.product,items.variant",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/products",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -31,35 +32,43 @@
 							"query": [
 								{
 									"key": "where[date_created][$gte]",
-									"value": "2022-01-01T00:00:00Z"
+									"value": "2022-01-01T00:00:00Z",
+									"disabled": true
 								},
 								{
 									"key": "where[stock_level][$gt]",
-									"value": "10"
+									"value": "10",
+									"disabled": true
 								},
 								{
 									"key": "where[active]",
-									"value": "true"
+									"value": "true",
+									"disabled": true
 								},
 								{
 									"key": "sort",
-									"value": "name+asc"
+									"value": "name+asc",
+									"disabled": true
 								},
 								{
 									"key": "limit",
-									"value": "10"
+									"value": "10",
+									"disabled": true
 								},
 								{
 									"key": "page",
-									"value": "2"
+									"value": "2",
+									"disabled": true
 								},
 								{
 									"key": "search",
-									"value": "t+shirt"
+									"value": "t+shirt",
+									"disabled": true
 								},
 								{
 									"key": "expand",
-									"value": "items.product,items.variant"
+									"value": "items.product,items.variant",
+									"disabled": true
 								}
 							]
 						}
@@ -72,7 +81,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/products/627bf318153c8f00127c4638",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/products/{{PRODUCT_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -85,7 +94,7 @@
 							],
 							"path": [
 								"products",
-								"627bf318153c8f00127c4638"
+								"{{PRODUCT_ID}}"
 							],
 							"query": [
 								{
@@ -199,7 +208,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/products/627bf318153c8f00127c4638?name=Updated&active=false",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/products/{{PRODUCT_ID}}?name=Updated&active=false",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -212,7 +221,7 @@
 							],
 							"path": [
 								"products",
-								"627bf318153c8f00127c4638"
+								"{{PRODUCT_ID}}"
 							],
 							"query": [
 								{
@@ -295,7 +304,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/categories/62581482890f02001293c981?expand=products",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/categories/{{CATEGORY_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -308,12 +317,13 @@
 							],
 							"path": [
 								"categories",
-								"62581482890f02001293c981"
+								"{{CATEGORY_ID}}"
 							],
 							"query": [
 								{
 									"key": "expand",
-									"value": "products"
+									"value": "products",
+									"disabled": true
 								},
 								{
 									"key": "fields",
@@ -365,7 +375,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/categories/62865200cfe836001955f414?slug=category-widgets&active=true",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/categories/{{CATEGORY_ID}}?slug=category-widgets&active=true",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -378,7 +388,7 @@
 							],
 							"path": [
 								"categories",
-								"62865200cfe836001955f414"
+								"{{CATEGORY_ID}}"
 							],
 							"query": [
 								{
@@ -451,7 +461,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/orders/624319a0178e7f6c57bb3c49",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/orders/{{ORDER_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -464,7 +474,7 @@
 							],
 							"path": [
 								"orders",
-								"624319a0178e7f6c57bb3c49"
+								"{{ORDER_ID}}"
 							],
 							"query": [
 								{
@@ -483,7 +493,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/orders/624319a0178e7f6c57bb3c49?coupon_code=SAVE10",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/orders/{{ORDER_ID}}?coupon_code=SAVE10",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -496,7 +506,7 @@
 							],
 							"path": [
 								"orders",
-								"624319a0178e7f6c57bb3c49"
+								"{{ORDER_ID}}"
 							],
 							"query": [
 								{
@@ -514,7 +524,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/orders?cart_id=627c2f0f2c89070012b658be",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/orders?cart_id={{CART_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -531,7 +541,7 @@
 							"query": [
 								{
 									"key": "cart_id",
-									"value": "627c2f0f2c89070012b658be"
+									"value": "{{CART_ID}}"
 								}
 							]
 						}
@@ -544,7 +554,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/orders/624319a0178e7f6c57bb3c49",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/orders/{{ORDER_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -557,7 +567,7 @@
 							],
 							"path": [
 								"orders",
-								"624319a0178e7f6c57bb3c49"
+								"{{ORDER_ID}}"
 							],
 							"query": [
 								{
@@ -627,7 +637,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/subscriptions/6197c57879e362475e24a8ae",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/subscriptions/{{SUBSCRIPTION_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -640,7 +650,7 @@
 							],
 							"path": [
 								"subscriptions",
-								"6197c57879e362475e24a8ae"
+								"{{SUBSCRIPTION_ID}}"
 							],
 							"query": [
 								{
@@ -659,7 +669,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/subscriptions/623b3c95e75dd3013d6eac48?coupon_code=SAVE10",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/subscriptions/{{SUBSCRIPTION_ID}}?coupon_code=SAVE10",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -672,7 +682,7 @@
 							],
 							"path": [
 								"subscriptions",
-								"623b3c95e75dd3013d6eac48"
+								"{{SUBSCRIPTION_ID}}"
 							],
 							"query": [
 								{
@@ -741,7 +751,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/invoices/6285b2a974fbbd7180097f99",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/invoices/{{INVOICE_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -754,7 +764,7 @@
 							],
 							"path": [
 								"invoices",
-								"6285b2a974fbbd7180097f99"
+								"{{INVOICE_ID}}"
 							]
 						}
 					},
@@ -817,7 +827,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/carts/62794a47c16d4800131eaef2",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/carts/{{CART_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -830,7 +840,7 @@
 							],
 							"path": [
 								"carts",
-								"62794a47c16d4800131eaef2"
+								"{{CART_ID}}"
 							],
 							"query": [
 								{
@@ -848,8 +858,17 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"items\": [\n        {\n            \"product_id\": \"{{PRODUCT_ID}}\",\n            \"quantity\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/carts?account_id=627308bc32db26001276f091&items[0][product_id]=622672c5e347cb01338e2403&items[0][quantity]=2",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/carts",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -862,20 +881,6 @@
 							],
 							"path": [
 								"carts"
-							],
-							"query": [
-								{
-									"key": "account_id",
-									"value": "627308bc32db26001276f091"
-								},
-								{
-									"key": "items[0][product_id]",
-									"value": "622672c5e347cb01338e2403"
-								},
-								{
-									"key": "items[0][quantity]",
-									"value": "2"
-								}
 							]
 						}
 					},
@@ -886,8 +891,17 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"items\": [\n        {\n            \"product_id\": \"{{PRODUCT_ID}}\",\n            \"quantity\": 2,\n            \"purchase_options\": {\n                \"plan_id\": \"{{PLAN_ID}}\",\n                \"billing_schedule\": {\n                    \"trial_days\": 0\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/carts?account_id=627308bc32db26001276f091&items[0][product_id]=6172bd3a29f9934cd5232368&items[0][quantity]=1&items[0][purchase_option][plan_id]=6172bd3a29f9934cd523236c&items[0][purchase_option][billing_schedule][trial_days]=0",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/carts",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -900,28 +914,6 @@
 							],
 							"path": [
 								"carts"
-							],
-							"query": [
-								{
-									"key": "account_id",
-									"value": "627308bc32db26001276f091"
-								},
-								{
-									"key": "items[0][product_id]",
-									"value": "6172bd3a29f9934cd5232368"
-								},
-								{
-									"key": "items[0][quantity]",
-									"value": "1"
-								},
-								{
-									"key": "items[0][purchase_option][plan_id]",
-									"value": "6172bd3a29f9934cd523236c"
-								},
-								{
-									"key": "items[0][purchase_option][billing_schedule][trial_days]",
-									"value": "0"
-								}
 							]
 						}
 					},
@@ -934,7 +926,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"items\": [\n    {\n      \"product_id\": \"5df4ad730d8f37132368a158\",\n      \"quantity\": 2,\n      \"options\": [\n        {\n          \"value\": \"Standard box (12oz)\",\n          \"name\": \"Size\",\n          \"variant\": true,\n          \"value_id\": \"5df4ad7226f6714d79511d92\"\n        },\n        {\n          \"value\": \"Venezuela\",\n          \"name\": \"Origin\",\n          \"variant\": true,\n          \"value_id\": \"6025b11d9892127d63b534dc\"\n        }\n      ]\n    }\n  ]\n}",
+							"raw": "{\n  \"account_id\": \"{{ACCOUNT_ID}}\",\n  \"items\": [\n    {\n      \"product_id\": \"{{PRODUCT_ID}}\",\n      \"quantity\": 3\n    }\n  ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -942,7 +934,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/carts/6279732b228c68001254ca98?account_id=627308bc32db26001276f091",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/carts/{{CART_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -955,13 +947,7 @@
 							],
 							"path": [
 								"carts",
-								"6279732b228c68001254ca98"
-							],
-							"query": [
-								{
-									"key": "account_id",
-									"value": "627308bc32db26001276f091"
-								}
+								"{{CART_ID}}"
 							]
 						}
 					},
@@ -1024,7 +1010,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/accounts/627308bc32db26001276f091",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/accounts/{{ACCOUNT_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1037,7 +1023,7 @@
 							],
 							"path": [
 								"accounts",
-								"627308bc32db26001276f091"
+								"{{ACCOUNT_ID}}"
 							]
 						}
 					},
@@ -1084,7 +1070,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"items\": [\n    {\n      \"product_id\": \"5df4ad730d8f37132368a158\",\n      \"quantity\": 2,\n      \"options\": [\n        {\n          \"value\": \"Standard box (12oz)\",\n          \"name\": \"Size\",\n          \"variant\": true,\n          \"value_id\": \"5df4ad7226f6714d79511d92\"\n        },\n        {\n          \"value\": \"Venezuela\",\n          \"name\": \"Origin\",\n          \"variant\": true,\n          \"value_id\": \"6025b11d9892127d63b534dc\"\n        }\n      ]\n    }\n  ]\n}",
+							"raw": "{\n    \"email\": \"unique@user.com\",\n    \"email_optin\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1092,7 +1078,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/accounts/627308bc32db26001276f091?email=unique@user.com&email_optin=true",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/accounts/{{ACCOUNT_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1105,17 +1091,7 @@
 							],
 							"path": [
 								"accounts",
-								"627308bc32db26001276f091"
-							],
-							"query": [
-								{
-									"key": "email",
-									"value": "unique@user.com"
-								},
-								{
-									"key": "email_optin",
-									"value": "true"
-								}
+								"{{ACCOUNT_ID}}"
 							]
 						}
 					},
@@ -1178,7 +1154,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/coupons/611e890827d69001eb2a5c9a",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/coupons/{{COUPON_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1191,7 +1167,7 @@
 							],
 							"path": [
 								"coupons",
-								"611e890827d69001eb2a5c9a"
+								"{{COUPON_ID}}"
 							]
 						}
 					},
@@ -1237,7 +1213,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"items\": [\n    {\n      \"product_id\": \"5df4ad730d8f37132368a158\",\n      \"quantity\": 2,\n      \"options\": [\n        {\n          \"value\": \"Standard box (12oz)\",\n          \"name\": \"Size\",\n          \"variant\": true,\n          \"value_id\": \"5df4ad7226f6714d79511d92\"\n        },\n        {\n          \"value\": \"Venezuela\",\n          \"name\": \"Origin\",\n          \"variant\": true,\n          \"value_id\": \"6025b11d9892127d63b534dc\"\n        }\n      ]\n    }\n  ]\n}",
+							"raw": "{\n    \"limit_uses\": 100,\n    \"active\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1245,7 +1221,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/coupons/62857220dad145001973af16?limit_uses=100&active=true",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/coupons/{{COUPON_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1258,17 +1234,7 @@
 							],
 							"path": [
 								"coupons",
-								"62857220dad145001973af16"
-							],
-							"query": [
-								{
-									"key": "limit_uses",
-									"value": "100"
-								},
-								{
-									"key": "active",
-									"value": "true"
-								}
+								"{{COUPON_ID}}"
 							]
 						}
 					},
@@ -1331,7 +1297,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/promotions/62422afd75bb6e013d89e079",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/promotions/{{PROMOTION_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1344,7 +1310,7 @@
 							],
 							"path": [
 								"promotions",
-								"62422afd75bb6e013d89e079"
+								"{{PROMOTION_ID}}"
 							]
 						}
 					},
@@ -1390,7 +1356,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"items\": [\n    {\n      \"product_id\": \"5df4ad730d8f37132368a158\",\n      \"quantity\": 2,\n      \"options\": [\n        {\n          \"value\": \"Standard box (12oz)\",\n          \"name\": \"Size\",\n          \"variant\": true,\n          \"value_id\": \"5df4ad7226f6714d79511d92\"\n        },\n        {\n          \"value\": \"Venezuela\",\n          \"name\": \"Origin\",\n          \"variant\": true,\n          \"value_id\": \"6025b11d9892127d63b534dc\"\n        }\n      ]\n    }\n  ]\n}",
+							"raw": "{\n    \"date_start\": \"2023-05-18T00:00:00.000Z\",\n    \"date_end\": \"2023-06-18T00:00:00.000Z\",\n    \"active\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1398,7 +1364,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/promotions/6285746dd0fc72001a6a2f4e?date_start=2022-05-18T00:00:00.000Z&date_end=2022-06-18T00:00:00.000Z&active=true",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/promotions/{{PROMOTION_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1411,21 +1377,7 @@
 							],
 							"path": [
 								"promotions",
-								"6285746dd0fc72001a6a2f4e"
-							],
-							"query": [
-								{
-									"key": "date_start",
-									"value": "2022-05-18T00:00:00.000Z"
-								},
-								{
-									"key": "date_end",
-									"value": "2022-06-18T00:00:00.000Z"
-								},
-								{
-									"key": "active",
-									"value": "true"
-								}
+								"{{PROMOTION_ID}}"
 							]
 						}
 					},
@@ -1488,7 +1440,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/giftcards/6219066961a9462532c6536e",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/giftcards/{{GIFTCARD_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1501,7 +1453,7 @@
 							],
 							"path": [
 								"giftcards",
-								"6219066961a9462532c6536e"
+								"{{GIFTCARD_ID}}"
 							]
 						}
 					},
@@ -1512,8 +1464,17 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/giftcards?amount=50",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/giftcards",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1526,12 +1487,6 @@
 							],
 							"path": [
 								"giftcards"
-							],
-							"query": [
-								{
-									"key": "amount",
-									"value": "50"
-								}
 							]
 						}
 					},
@@ -1544,7 +1499,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"items\": [\n    {\n      \"product_id\": \"5df4ad730d8f37132368a158\",\n      \"quantity\": 2,\n      \"options\": [\n        {\n          \"value\": \"Standard box (12oz)\",\n          \"name\": \"Size\",\n          \"variant\": true,\n          \"value_id\": \"5df4ad7226f6714d79511d92\"\n        },\n        {\n          \"value\": \"Venezuela\",\n          \"name\": \"Origin\",\n          \"variant\": true,\n          \"value_id\": \"6025b11d9892127d63b534dc\"\n        }\n      ]\n    }\n  ]\n}",
+							"raw": "{\n    \"amount\": 10\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1552,7 +1507,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/giftcards/6219066961a9462532c6536e?amount=100",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/giftcards/{{GIFTCARD_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1565,13 +1520,7 @@
 							],
 							"path": [
 								"giftcards",
-								"6219066961a9462532c6536e"
-							],
-							"query": [
-								{
-									"key": "amount",
-									"value": "100"
-								}
+								"{{GIFTCARD_ID}}"
 							]
 						}
 					},
@@ -1634,7 +1583,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/products:stock/62851d64dad145001973ad95?expand=variant",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/products:stock/{{STOCK_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1647,12 +1596,13 @@
 							],
 							"path": [
 								"products:stock",
-								"62851d64dad145001973ad95"
+								"{{STOCK_ID}}"
 							],
 							"query": [
 								{
 									"key": "expand",
-									"value": "variant"
+									"value": "variant",
+									"disabled": true
 								}
 							]
 						}
@@ -1664,8 +1614,17 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quantity\": 100,\n    \"reason\": \"received\",\n    \"reason_message\": \"New shipment received\",\n    \"parent_id\": \"{{PRODUCT_ID}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/products:stock?parent_id=6262b8cf993cc3001af4408c&quantity=100&reason=received&reason_message=New shipment received",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/products:stock",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1678,24 +1637,6 @@
 							],
 							"path": [
 								"products:stock"
-							],
-							"query": [
-								{
-									"key": "parent_id",
-									"value": "6262b8cf993cc3001af4408c"
-								},
-								{
-									"key": "quantity",
-									"value": "100"
-								},
-								{
-									"key": "reason",
-									"value": "received"
-								},
-								{
-									"key": "reason_message",
-									"value": "New shipment received"
-								}
 							]
 						}
 					},
@@ -1758,7 +1699,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/shipments/627c0559f77b630012bdf9be",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/shipments/{{SHIPMENT_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1771,7 +1712,7 @@
 							],
 							"path": [
 								"shipments",
-								"627c0559f77b630012bdf9be"
+								"{{SHIPMENT_ID}}"
 							]
 						}
 					},
@@ -1784,7 +1725,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"order_id\": \"62851d5fdad145001973ad80\",\n    \"items\": [\n        {\n            \n            \"product_id\": \"5ff383fbb6318806468b334c\",\n            \"quantity\": 1\n        }\n    ]\n}",
+							"raw": "{\n    \"order_id\": \"{{ORDER_ID}}\",\n    \"items\": [\n        {\n            \n            \"product_id\": \"{{PRODUCT_ID}}\",\n            \"quantity\": 1\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1815,8 +1756,17 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tracking_code\": \"T192000000XYZ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/shipments/628673e97cb49b0019bbde1c?tracking_code=T192000000XYZ",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/shipments/{{SHIPMENT_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1829,13 +1779,7 @@
 							],
 							"path": [
 								"shipments",
-								"628673e97cb49b0019bbde1c"
-							],
-							"query": [
-								{
-									"key": "tracking_code",
-									"value": "T192000000XYZ"
-								}
+								"{{SHIPMENT_ID}}"
 							]
 						}
 					},
@@ -1898,7 +1842,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/returns/60cce62e4453a52c5d7eed66",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/returns/{{RETURN_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -1911,7 +1855,7 @@
 							],
 							"path": [
 								"returns",
-								"60cce62e4453a52c5d7eed66"
+								"{{RETURN_ID}}"
 							],
 							"query": [
 								{
@@ -1931,7 +1875,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"order_id\": \"62851d5fdad145001973ad80\",\n    \"items\": [\n        {\n            \n            \"product_id\": \"5ff383fbb6318806468b334c\",\n            \"quantity\": 1,\n            \"quantity_restocked\": 1\n        }\n    ]\n}",
+							"raw": "{\n    \"order_id\": \"{{ORDER_ID}}\",\n    \"items\": [\n        {\n            \n            \"product_id\": \"{{PRODUCT_ID}}\",\n            \"quantity\": 1,\n            \"quantity_restocked\": 1\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2014,7 +1958,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/payments/62851d5fdad145001973ad81",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/payments/{{PAYMENT_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -2027,7 +1971,7 @@
 							],
 							"path": [
 								"payments",
-								"62851d5fdad145001973ad81"
+								"{{PAYMENT_ID}}"
 							],
 							"query": [
 								{
@@ -2047,7 +1991,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"account_id\": \"627308bc32db26001276f091\",\n    \"order_id\": \"627c2f8f20a9020012019645\",\n    \"amount\": 50,\n    \"method\": \"card\",\n    \"gateway\": \"stripe\",\n    \"card\": {\n        \"brand\": \"Visa\",\n        \"last4\": \"4242\",\n        \"exp_month\": 2,\n        \"exp_year\": 2024,\n        \"token\": \"card_mgLMIJrqdFKjapNnKQXzbGSg\"\n    }\n}",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"order_id\": \"{{ORDER_ID}}\",\n    \"amount\": 50,\n    \"method\": \"card\",\n    \"gateway\": \"stripe\",\n    \"card\": {\n        \"brand\": \"Visa\",\n        \"last4\": \"4242\",\n        \"exp_month\": 2,\n        \"exp_year\": 2024,\n        \"token\": \"{{TOKEN_ID}}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2130,7 +2074,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/payments:refunds/62015ecf694338013d1cddaa",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/payments:refunds/{{REFUND_ID}}",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -2143,7 +2087,7 @@
 							],
 							"path": [
 								"payments:refunds",
-								"62015ecf694338013d1cddaa"
+								"{{REFUND_ID}}"
 							]
 						}
 					},
@@ -2156,7 +2100,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "{\n    \"order_id\": \"{{ORDER_ID}}\",\n    \"amount\": 50,\n    \"parent_id\": \"{{PAYMENT_ID}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2164,7 +2108,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/payments:refunds?order_id=627c2f8f20a9020012019645&amount=50&parent_id=62867bf783dac10019aa7f86",
+							"raw": "https://{{STORE_ID}}:{{SECRET_KEY}}@api.swell.store/payments:refunds",
 							"protocol": "https",
 							"auth": {
 								"user": "{{STORE_ID}}",
@@ -2177,20 +2121,6 @@
 							],
 							"path": [
 								"payments:refunds"
-							],
-							"query": [
-								{
-									"key": "order_id",
-									"value": "627c2f8f20a9020012019645"
-								},
-								{
-									"key": "amount",
-									"value": "50"
-								},
-								{
-									"key": "parent_id",
-									"value": "62867bf783dac10019aa7f86"
-								}
 							]
 						}
 					},
@@ -2229,6 +2159,75 @@
 			"key": "SECRET_KEY",
 			"value": "",
 			"type": "string"
+		},
+		{
+			"key": "PRODUCT_ID",
+			"value": ""
+		},
+		{
+			"key": "CATEGORY_ID",
+			"value": ""
+		},
+		{
+			"key": "ORDER_ID",
+			"value": ""
+		},
+		{
+			"key": "CART_ID",
+			"value": ""
+		},
+		{
+			"key": "SUBSCRIPTION_ID",
+			"value": ""
+		},
+		{
+			"key": "INVOICE_ID",
+			"value": ""
+		},
+		{
+			"key": "ACCOUNT_ID",
+			"value": ""
+		},
+		{
+			"key": "PLAN_ID",
+			"value": ""
+		},
+		{
+			"key": "COUPON_ID",
+			"value": ""
+		},
+		{
+			"key": "PROMOTION_ID",
+			"value": ""
+		},
+		{
+			"key": "GIFTCARD_ID",
+			"value": ""
+		},
+		{
+			"key": "STOCK_ID",
+			"value": ""
+		},
+		{
+			"key": "SHIPMENT_ID",
+			"value": ""
+		},
+		{
+			"key": "RETURN_ID",
+			"value": ""
+		},
+		{
+			"key": "PAYMENT_ID",
+			"value": ""
+		},
+		{
+			"key": "TOKEN_ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "REFUND_ID",
+			"value": ""
 		}
 	]
 }
