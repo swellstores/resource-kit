@@ -1,0 +1,2395 @@
+{
+  "openapi": "3.0.0",
+  "x-stoplight": {
+    "id": "z230tid8hyzjn"
+  },
+  "info": {
+    "title": "Swell",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.swell.store",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Products",
+        "operationId": "Products",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Create Product",
+        "operationId": "CreateProduct",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "T-Shirt"
+            }
+          },
+          {
+            "name": "price",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 99
+            }
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            }
+          },
+          {
+            "name": "bundle",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Product",
+        "operationId": "Product",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Update Product",
+        "operationId": "UpdateProduct",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Updated"
+            }
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/categories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Categories",
+        "operationId": "Categories",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Category",
+        "operationId": "PostCategory",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Widgets"
+            }
+          },
+          {
+            "name": "sorting",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "price_asc"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/categories/": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Category",
+        "operationId": "Category",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Update Category",
+        "operationId": "UpdateCategory",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "category-widgets"
+            }
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/orders": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Orders",
+        "operationId": "Orders",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Convert Cart to Order",
+        "operationId": "ConvertCarttoOrder",
+        "parameters": [
+          {
+            "name": "cart_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/orders/": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Order",
+        "operationId": "Order",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Update Order",
+        "operationId": "UpdateOrder",
+        "parameters": [
+          {
+            "name": "coupon_code",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "SAVE10"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Delete Order",
+        "operationId": "DeleteOrder",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/subscriptions": {
+      "get": {
+        "tags": [
+          "Subscriptions"
+        ],
+        "summary": "Subscriptions",
+        "operationId": "Subscriptions",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/subscriptions/": {
+      "get": {
+        "tags": [
+          "Subscriptions"
+        ],
+        "summary": "Subscription",
+        "operationId": "Subscription",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Subscriptions"
+        ],
+        "summary": "Update Subscription",
+        "operationId": "UpdateSubscription",
+        "parameters": [
+          {
+            "name": "coupon_code",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "SAVE10"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/invoices": {
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "summary": "Invoices",
+        "operationId": "Invoices",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/invoices/": {
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "summary": "Invoice",
+        "operationId": "Invoice",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/carts": {
+      "get": {
+        "tags": [
+          "Carts"
+        ],
+        "summary": "Carts",
+        "operationId": "Carts",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Carts"
+        ],
+        "summary": "Create Cart",
+        "operationId": "CreateCart",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateCartRequest"
+                  },
+                  {
+                    "example": {
+                      "account_id": "",
+                      "items": [
+                        {
+                          "product_id": "",
+                          "quantity": 2
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "account_id": "",
+                "items": [
+                  {
+                    "product_id": "",
+                    "quantity": 2
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/carts/": {
+      "get": {
+        "tags": [
+          "Carts"
+        ],
+        "summary": "Cart",
+        "operationId": "Cart",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Carts"
+        ],
+        "summary": "Update Cart",
+        "operationId": "UpdateCart",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateCartRequest"
+                  },
+                  {
+                    "example": {
+                      "account_id": "",
+                      "items": [
+                        {
+                          "product_id": "",
+                          "quantity": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "account_id": "",
+                "items": [
+                  {
+                    "product_id": "",
+                    "quantity": 3
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/accounts": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Accounts",
+        "operationId": "Accounts",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Create Account",
+        "operationId": "CreateAccount",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "new@user.com"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "New User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/accounts/": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Account",
+        "operationId": "Account",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Update Account",
+        "operationId": "UpdateAccount",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateAccountRequest"
+                  },
+                  {
+                    "example": {
+                      "email": "unique@user.com",
+                      "email_optin": true
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "email": "unique@user.com",
+                "email_optin": true
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/coupons": {
+      "get": {
+        "tags": [
+          "Coupons"
+        ],
+        "summary": "Coupons",
+        "operationId": "Coupons",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Coupons"
+        ],
+        "summary": "Create Coupon",
+        "operationId": "CreateCoupon",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateCouponRequest"
+                  },
+                  {
+                    "example": {
+                      "name": "SAVE 15",
+                      "description": "SAVE $15 when you apply this coupon!",
+                      "codes": [
+                        {
+                          "code": "SAVE15"
+                        }
+                      ],
+                      "discounts": [
+                        {
+                          "value_type": "fixed",
+                          "value_fixed": 15
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "SAVE 15",
+                "description": "SAVE $15 when you apply this coupon!",
+                "codes": [
+                  {
+                    "code": "SAVE15"
+                  }
+                ],
+                "discounts": [
+                  {
+                    "value_type": "fixed",
+                    "value_fixed": 15
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/coupons/": {
+      "get": {
+        "tags": [
+          "Coupons"
+        ],
+        "summary": "Coupon",
+        "operationId": "Coupon",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Coupons"
+        ],
+        "summary": "Update Coupon",
+        "operationId": "UpdateCoupon",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateCouponRequest"
+                  },
+                  {
+                    "example": {
+                      "limit_uses": 100,
+                      "active": true
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "limit_uses": 100,
+                "active": true
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/promotions": {
+      "get": {
+        "tags": [
+          "Promotions"
+        ],
+        "summary": "Promotions",
+        "operationId": "Promotions",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Promotions"
+        ],
+        "summary": "Create Promotion",
+        "operationId": "CreatePromotion",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreatePromotionRequest"
+                  },
+                  {
+                    "example": {
+                      "name": "15% off store wide sale",
+                      "discounts": [
+                        {
+                          "type": "total",
+                          "value_type": "percent",
+                          "value_percent": 15
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "15% off store wide sale",
+                "discounts": [
+                  {
+                    "type": "total",
+                    "value_type": "percent",
+                    "value_percent": 15
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/promotions/": {
+      "get": {
+        "tags": [
+          "Promotions"
+        ],
+        "summary": "Promotion",
+        "operationId": "Promotion",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Promotions"
+        ],
+        "summary": "Update Promotion",
+        "operationId": "UpdatePromotion",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdatePromotionRequest"
+                  },
+                  {
+                    "example": {
+                      "date_start": "2023-05-18T00:00:00.000Z",
+                      "date_end": "2023-06-18T00:00:00.000Z",
+                      "active": true
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "date_start": "2023-05-18T00:00:00.000Z",
+                "date_end": "2023-06-18T00:00:00.000Z",
+                "active": true
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/giftcards": {
+      "get": {
+        "tags": [
+          "Gift Cards"
+        ],
+        "summary": "List Gift Cards",
+        "operationId": "ListGiftCards",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Gift Cards"
+        ],
+        "summary": "Create Gift card",
+        "operationId": "CreateGiftcard",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateGiftcardRequest"
+                  },
+                  {
+                    "example": {
+                      "amount": 50
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "amount": 50
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/giftcards/": {
+      "get": {
+        "tags": [
+          "Gift Cards"
+        ],
+        "summary": "Gift card",
+        "operationId": "Giftcard",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Gift Cards"
+        ],
+        "summary": "Update Gift Card",
+        "operationId": "UpdateGiftCard",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateGiftCardRequest"
+                  },
+                  {
+                    "example": {
+                      "amount": 10
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "amount": 10
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products:stock": {
+      "get": {
+        "tags": [
+          "Stock Adjustments"
+        ],
+        "summary": "List Stock Adjustments",
+        "operationId": "ListStockAdjustments",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Stock Adjustments"
+        ],
+        "summary": "Create Stock Adjustment",
+        "operationId": "CreateStockAdjustment",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateStockAdjustmentRequest"
+                  },
+                  {
+                    "example": {
+                      "quantity": 100,
+                      "reason": "received",
+                      "reason_message": "New shipment received",
+                      "parent_id": ""
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "quantity": 100,
+                "reason": "received",
+                "reason_message": "New shipment received",
+                "parent_id": ""
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products:stock/": {
+      "get": {
+        "tags": [
+          "Stock Adjustments"
+        ],
+        "summary": "Stock Adjustment",
+        "operationId": "StockAdjustment",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/shipments": {
+      "get": {
+        "tags": [
+          "Shipments"
+        ],
+        "summary": "Shipments",
+        "operationId": "Shipments",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Shipments"
+        ],
+        "summary": "Create Shipment",
+        "operationId": "CreateShipment",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateShipmentRequest"
+                  },
+                  {
+                    "example": {
+                      "order_id": "",
+                      "items": [
+                        {
+                          "product_id": "",
+                          "quantity": 1
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "order_id": "",
+                "items": [
+                  {
+                    "product_id": "",
+                    "quantity": 1
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/shipments/": {
+      "get": {
+        "tags": [
+          "Shipments"
+        ],
+        "summary": "Shipment",
+        "operationId": "Shipment",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Shipments"
+        ],
+        "summary": "Update Shipment",
+        "operationId": "UpdateShipment",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateShipmentRequest"
+                  },
+                  {
+                    "example": {
+                      "tracking_code": "T192000000XYZ"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "tracking_code": "T192000000XYZ"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/returns": {
+      "get": {
+        "tags": [
+          "Returns"
+        ],
+        "summary": "Returns",
+        "operationId": "Returns",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Returns"
+        ],
+        "summary": "Create Return",
+        "operationId": "CreateReturn",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateReturnRequest"
+                  },
+                  {
+                    "example": {
+                      "order_id": "",
+                      "items": [
+                        {
+                          "product_id": "",
+                          "quantity": 1,
+                          "quantity_restocked": 1
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "order_id": "",
+                "items": [
+                  {
+                    "product_id": "",
+                    "quantity": 1,
+                    "quantity_restocked": 1
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/returns/": {
+      "get": {
+        "tags": [
+          "Returns"
+        ],
+        "summary": "Return",
+        "operationId": "Return",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/payments": {
+      "get": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "Payments",
+        "operationId": "Payments",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "Create Payment",
+        "operationId": "CreatePayment",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreatePaymentRequest"
+                  },
+                  {
+                    "example": {
+                      "account_id": "",
+                      "order_id": "",
+                      "amount": 50,
+                      "method": "card",
+                      "gateway": "stripe",
+                      "card": {
+                        "brand": "Visa",
+                        "last4": "4242",
+                        "exp_month": 2,
+                        "exp_year": 2024,
+                        "token": ""
+                      }
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "account_id": "",
+                "order_id": "",
+                "amount": 50,
+                "method": "card",
+                "gateway": "stripe",
+                "card": {
+                  "brand": "Visa",
+                  "last4": "4242",
+                  "exp_month": 2,
+                  "exp_year": 2024,
+                  "token": ""
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/payments/": {
+      "get": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "Payment",
+        "operationId": "Payment",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/payments:refunds": {
+      "get": {
+        "tags": [
+          "Refunds"
+        ],
+        "summary": "Refunds",
+        "operationId": "Refunds",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Refunds"
+        ],
+        "summary": "Issue a Refund",
+        "operationId": "IssueaRefund",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IssueaRefundRequest"
+                  },
+                  {
+                    "example": {
+                      "order_id": "",
+                      "amount": 50,
+                      "parent_id": ""
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "order_id": "",
+                "amount": 50,
+                "parent_id": ""
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/payments:refunds/": {
+      "get": {
+        "tags": [
+          "Refunds"
+        ],
+        "summary": "Refund",
+        "operationId": "Refund",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreategiftcardproductRequest": {
+        "title": "CreategiftcardproductRequest",
+        "required": [
+          "delivery",
+          "name",
+          "options",
+          "slug",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "delivery": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Option"
+            },
+            "description": ""
+          },
+          "slug": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "delivery": "shipment",
+          "name": "Gift Card",
+          "options": [
+            {
+              "name": "Value",
+              "variant": true,
+              "values": [
+                {
+                  "name": "$25",
+                  "price": 25
+                },
+                {
+                  "name": "$50",
+                  "price": 50
+                },
+                {
+                  "name": "$100",
+                  "price": 100
+                }
+              ]
+            }
+          ],
+          "slug": "gift-card",
+          "type": "giftcard"
+        }
+      },
+      "Option": {
+        "title": "Option",
+        "required": [
+          "name",
+          "variant",
+          "values"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "variant": {
+            "type": "boolean"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Value"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "name": "Value",
+          "variant": true,
+          "values": [
+            {
+              "name": "$25",
+              "price": 25
+            },
+            {
+              "name": "$50",
+              "price": 50
+            },
+            {
+              "name": "$100",
+              "price": 100
+            }
+          ]
+        }
+      },
+      "Value": {
+        "title": "Value",
+        "required": [
+          "name",
+          "price"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "name": "$25",
+          "price": 25
+        }
+      },
+      "CreateCartRequest": {
+        "title": "CreateCartRequest",
+        "required": [
+          "account_id",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Item"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "account_id": "",
+          "items": [
+            {
+              "product_id": "",
+              "quantity": 2
+            }
+          ]
+        }
+      },
+      "Item": {
+        "title": "Item",
+        "required": [
+          "product_id",
+          "quantity"
+        ],
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "product_id": "",
+          "quantity": 2
+        }
+      },
+      "CreateCartforSubscriptionRequest": {
+        "title": "CreateCartforSubscriptionRequest",
+        "required": [
+          "account_id",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Item1"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "account_id": "",
+          "items": [
+            {
+              "product_id": "",
+              "quantity": 2,
+              "purchase_options": {
+                "plan_id": "",
+                "billing_schedule": {
+                  "trial_days": 0
+                }
+              }
+            }
+          ]
+        }
+      },
+      "Item1": {
+        "title": "Item1",
+        "required": [
+          "product_id",
+          "quantity",
+          "purchase_options"
+        ],
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "purchase_options": {
+            "$ref": "#/components/schemas/PurchaseOptions"
+          }
+        },
+        "example": {
+          "product_id": "",
+          "quantity": 2,
+          "purchase_options": {
+            "plan_id": "",
+            "billing_schedule": {
+              "trial_days": 0
+            }
+          }
+        }
+      },
+      "PurchaseOptions": {
+        "title": "PurchaseOptions",
+        "required": [
+          "plan_id",
+          "billing_schedule"
+        ],
+        "type": "object",
+        "properties": {
+          "plan_id": {
+            "type": "string"
+          },
+          "billing_schedule": {
+            "$ref": "#/components/schemas/BillingSchedule"
+          }
+        },
+        "example": {
+          "plan_id": "",
+          "billing_schedule": {
+            "trial_days": 0
+          }
+        }
+      },
+      "BillingSchedule": {
+        "title": "BillingSchedule",
+        "required": [
+          "trial_days"
+        ],
+        "type": "object",
+        "properties": {
+          "trial_days": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "trial_days": 0
+        }
+      },
+      "UpdateCartRequest": {
+        "title": "UpdateCartRequest",
+        "required": [
+          "account_id",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Item"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "account_id": "",
+          "items": [
+            {
+              "product_id": "",
+              "quantity": 3
+            }
+          ]
+        }
+      },
+      "UpdateAccountRequest": {
+        "title": "UpdateAccountRequest",
+        "required": [
+          "email",
+          "email_optin"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "email_optin": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "email": "unique@user.com",
+          "email_optin": true
+        }
+      },
+      "CreateCouponRequest": {
+        "title": "CreateCouponRequest",
+        "required": [
+          "name",
+          "description",
+          "codes",
+          "discounts"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "description": ""
+          },
+          "discounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Discount"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "name": "SAVE 15",
+          "description": "SAVE $15 when you apply this coupon!",
+          "codes": [
+            {
+              "code": "SAVE15"
+            }
+          ],
+          "discounts": [
+            {
+              "value_type": "fixed",
+              "value_fixed": 15
+            }
+          ]
+        }
+      },
+      "Code": {
+        "title": "Code",
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "SAVE15"
+        }
+      },
+      "Discount": {
+        "title": "Discount",
+        "required": [
+          "value_type",
+          "value_fixed"
+        ],
+        "type": "object",
+        "properties": {
+          "value_type": {
+            "type": "string"
+          },
+          "value_fixed": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "value_type": "fixed",
+          "value_fixed": 15
+        }
+      },
+      "UpdateCouponRequest": {
+        "title": "UpdateCouponRequest",
+        "required": [
+          "limit_uses",
+          "active"
+        ],
+        "type": "object",
+        "properties": {
+          "limit_uses": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "limit_uses": 100,
+          "active": true
+        }
+      },
+      "CreatePromotionRequest": {
+        "title": "CreatePromotionRequest",
+        "required": [
+          "name",
+          "discounts"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "discounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Discount1"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "name": "15% off store wide sale",
+          "discounts": [
+            {
+              "type": "total",
+              "value_type": "percent",
+              "value_percent": 15
+            }
+          ]
+        }
+      },
+      "Discount1": {
+        "title": "Discount1",
+        "required": [
+          "type",
+          "value_type",
+          "value_percent"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value_type": {
+            "type": "string"
+          },
+          "value_percent": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "type": "total",
+          "value_type": "percent",
+          "value_percent": 15
+        }
+      },
+      "UpdatePromotionRequest": {
+        "title": "UpdatePromotionRequest",
+        "required": [
+          "date_start",
+          "date_end",
+          "active"
+        ],
+        "type": "object",
+        "properties": {
+          "date_start": {
+            "type": "string"
+          },
+          "date_end": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "date_start": "2023-05-18T00:00:00.000Z",
+          "date_end": "2023-06-18T00:00:00.000Z",
+          "active": true
+        }
+      },
+      "CreateGiftcardRequest": {
+        "title": "CreateGiftcardRequest",
+        "required": [
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "amount": 50
+        }
+      },
+      "UpdateGiftCardRequest": {
+        "title": "UpdateGiftCardRequest",
+        "required": [
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "amount": 10
+        }
+      },
+      "CreateStockAdjustmentRequest": {
+        "title": "CreateStockAdjustmentRequest",
+        "required": [
+          "quantity",
+          "reason",
+          "reason_message",
+          "parent_id"
+        ],
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "reason_message": {
+            "type": "string"
+          },
+          "parent_id": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "quantity": 100,
+          "reason": "received",
+          "reason_message": "New shipment received",
+          "parent_id": ""
+        }
+      },
+      "CreateShipmentRequest": {
+        "title": "CreateShipmentRequest",
+        "required": [
+          "order_id",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Item"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "order_id": "",
+          "items": [
+            {
+              "product_id": "",
+              "quantity": 1
+            }
+          ]
+        }
+      },
+      "UpdateShipmentRequest": {
+        "title": "UpdateShipmentRequest",
+        "required": [
+          "tracking_code"
+        ],
+        "type": "object",
+        "properties": {
+          "tracking_code": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "tracking_code": "T192000000XYZ"
+        }
+      },
+      "CreateReturnRequest": {
+        "title": "CreateReturnRequest",
+        "required": [
+          "order_id",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Item4"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "order_id": "",
+          "items": [
+            {
+              "product_id": "",
+              "quantity": 1,
+              "quantity_restocked": 1
+            }
+          ]
+        }
+      },
+      "Item4": {
+        "title": "Item4",
+        "required": [
+          "product_id",
+          "quantity",
+          "quantity_restocked"
+        ],
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantity_restocked": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "product_id": "",
+          "quantity": 1,
+          "quantity_restocked": 1
+        }
+      },
+      "CreatePaymentRequest": {
+        "title": "CreatePaymentRequest",
+        "required": [
+          "account_id",
+          "order_id",
+          "amount",
+          "method",
+          "gateway",
+          "card"
+        ],
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "method": {
+            "type": "string"
+          },
+          "gateway": {
+            "type": "string"
+          },
+          "card": {
+            "$ref": "#/components/schemas/Card"
+          }
+        },
+        "example": {
+          "account_id": "",
+          "order_id": "",
+          "amount": 50,
+          "method": "card",
+          "gateway": "stripe",
+          "card": {
+            "brand": "Visa",
+            "last4": "4242",
+            "exp_month": 2,
+            "exp_year": 2024,
+            "token": ""
+          }
+        }
+      },
+      "Card": {
+        "title": "Card",
+        "required": [
+          "brand",
+          "last4",
+          "exp_month",
+          "exp_year",
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "brand": {
+            "type": "string"
+          },
+          "last4": {
+            "type": "string"
+          },
+          "exp_month": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "exp_year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "brand": "Visa",
+          "last4": "4242",
+          "exp_month": 2,
+          "exp_year": 2024,
+          "token": ""
+        }
+      },
+      "IssueaRefundRequest": {
+        "title": "IssueaRefundRequest",
+        "required": [
+          "order_id",
+          "amount",
+          "parent_id"
+        ],
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parent_id": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "order_id": "",
+          "amount": 50,
+          "parent_id": ""
+        }
+      }
+    },
+    "securitySchemes": {
+      "API Key": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Products"
+    },
+    {
+      "name": "Categories"
+    },
+    {
+      "name": "Orders"
+    },
+    {
+      "name": "Subscriptions"
+    },
+    {
+      "name": "Invoices"
+    },
+    {
+      "name": "Carts"
+    },
+    {
+      "name": "Accounts"
+    },
+    {
+      "name": "Coupons"
+    },
+    {
+      "name": "Promotions"
+    },
+    {
+      "name": "Gift Cards"
+    },
+    {
+      "name": "Stock Adjustments"
+    },
+    {
+      "name": "Shipments"
+    },
+    {
+      "name": "Returns"
+    },
+    {
+      "name": "Payments"
+    },
+    {
+      "name": "Refunds"
+    }
+  ],
+  "security": [
+    {
+      "API Key": []
+    }
+  ]
+}
